@@ -146,7 +146,7 @@ export const BusinessAccountForm = () => {
       setErrors(errors);
   }else{
       try{
-        const response = await fetch(`http://localhost:5000/api/customer/addcust`,{
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/customer/addcust`,{
             method: "POST",
             headers:{
                 "Content-Type": "application/json",

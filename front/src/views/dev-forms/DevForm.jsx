@@ -77,7 +77,7 @@ const MultiStepForm = () => {
     selectemplate(id);
     settemplateid(id);
     try {
-      const response = await fetch(`http://localhost:5000/api/form/gettemfields/${id}`);
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/gettemfields/${id}`);
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
@@ -166,7 +166,7 @@ const MultiStepForm = () => {
             setErrors(newErrors);
           }else{
             try{
-              const response = await fetch(`http://localhost:5000/api/customer/addcust`,{
+              const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/customer/addcust`,{
                   method: "POST",
                   headers:{
                       "Content-Type": "application/json",
@@ -207,7 +207,7 @@ const MultiStepForm = () => {
             setErrors(newErrors);
           }else{
             try{
-              const response = await fetch(`http://localhost:5000/api/customer/edit/${bussacc}`,{
+              const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/customer/edit/${bussacc}`,{
                   method: "PATCH",
                   headers:{
                       "Content-Type": "application/json",
@@ -243,7 +243,7 @@ const MultiStepForm = () => {
           setErrors2(newErrors2);
           }else{
             try{
-              const response = await fetch(`http://localhost:5000/api/form/addtemplate`,{
+              const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/addtemplate`,{
                 method: "POST",
                 headers:{
                     "Content-Type": "application/json",
@@ -322,7 +322,7 @@ const MultiStepForm = () => {
       setErrors(newErrors1);
     }else{
       try{
-        const response = await fetch(`http://localhost:5000/api/dns/getdomaindetails/${getDomain(domain)}`,{
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/dns/getdomaindetails/${getDomain(domain)}`,{
             method: "GET",
             headers:{
                 "Content-Type": "application/json",
@@ -379,7 +379,7 @@ const MultiStepForm = () => {
     // preids,templateid
 
     try {
-      const response = await fetch(`http://localhost:5000/api/form/getadditionalmodules`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getadditionalmodules`,{
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -533,7 +533,7 @@ const MultiStepForm = () => {
 
   const fetchtemplates = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/form/gettemplates');
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/form/gettemplates');
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
@@ -555,7 +555,7 @@ const MultiStepForm = () => {
     const val =event.target.value;
     if(val){
       try {
-        const response = await fetch(`http://localhost:5000/api/form/getsearchtemplates/${val}`);
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getsearchtemplates/${val}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
@@ -583,7 +583,7 @@ const MultiStepForm = () => {
       fetchData();
     }else{
       try {
-        const response = await fetch(`http://localhost:5000/api/form/getpage/${val}`);
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getpage/${val}`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
@@ -602,7 +602,7 @@ const MultiStepForm = () => {
 
   const getpage1funtion = async() =>{
     try {
-      const response = await fetch(`http://localhost:5000/api/form/getadditionalmodules`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getadditionalmodules`,{
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -635,7 +635,7 @@ const MultiStepForm = () => {
       getpage1funtion();
     }else{
       try {
-        const response = await fetch(`http://localhost:5000/api/form/getpage1/${val}`,{
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getpage1/${val}`,{
           method: "PATCH",
           headers:{
               "Content-Type": "application/json",
@@ -663,7 +663,7 @@ const MultiStepForm = () => {
   const selectemplate = async(id)=>{
     const bussacc= JSON.parse(localStorage.getItem("bussacc"));
     try{
-      const response = await fetch('http://localhost:5000/api/form/updatetmeplateid',{
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/form/updatetmeplateid',{
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -689,7 +689,7 @@ const MultiStepForm = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/form/getall');
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/form/getall');
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
@@ -713,7 +713,7 @@ const MultiStepForm = () => {
       const pageid = id;
       const pagename =name;
       const bussacc= JSON.parse(localStorage.getItem("bussacc"));
-      const response = await fetch('http://localhost:5000/api/form/inmodagclt',{
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/form/inmodagclt',{
         method:'POST',
         headers:{
           "Content-Type": "application/json",
@@ -743,7 +743,7 @@ const MultiStepForm = () => {
     try {
       const bussacc= JSON.parse(localStorage.getItem("bussacc"));
 
-      const response = await fetch(`http://localhost:5000/api/form/getclientmodules/${bussacc}`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getclientmodules/${bussacc}`,{
         method: "PATCH",
         headers:{
             "Content-Type": "application/json",

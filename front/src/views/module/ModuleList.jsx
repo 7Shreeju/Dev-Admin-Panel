@@ -29,7 +29,7 @@ const ModuleList = () => {
 }
 const handleyesno =async (id) =>{
   try {
-    const response = await fetch(`http://localhost:5000/api/form/delete/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/delete/${id}`,{
         method:"DELETE",
     });
     const data = await response.json();
@@ -49,7 +49,7 @@ const handleyesno =async (id) =>{
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/form/getall');
+        const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/form/getall');
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }

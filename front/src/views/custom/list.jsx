@@ -43,7 +43,7 @@
 
   const handleyesno =async (id) =>{
     try {
-      const response = await fetch(`http://localhost:5000/api/custom/deletecustom/${id}`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/deletecustom/${id}`,{
           method:"DELETE",
       });
       const data = await response.json();
@@ -67,7 +67,7 @@
   const handleedit = async(id) =>{
 
     try {
-      const response = await fetch(`http://localhost:5000/api/custom/getdatabyid/${id}`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/getdatabyid/${id}`,{
           method:"GET",
       });
       const data = await response.json();
@@ -78,8 +78,8 @@
         css:data.msg[0].css,
         js:data.msg[0].js,
       });
-      setfilepreview(`http://localhost:5000/custom/${data.msg[0].css}`);
-      setfilepreview1(`http://localhost:5000/custom/${data.msg[0].js}`);
+      setfilepreview(`https://dev-admin-panel-1js4.onrender.com/custom/${data.msg[0].css}`);
+      setfilepreview1(`https://dev-admin-panel-1js4.onrender.com/custom/${data.msg[0].js}`);
       setShow1(true);
       setItemIdToDelete(data.msg[0]._id);
       setErrors('');
@@ -90,7 +90,7 @@
   //for datatable
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/custom/getlist');
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/custom/getlist');
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
@@ -244,7 +244,7 @@
           });
         if(!id){
           try {
-            const response = await fetch(`http://localhost:5000/api/custom/addcustom`,{
+            const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/addcustom`,{
               method: "POST",
               body:formData,
       
@@ -271,7 +271,7 @@
           }
         }else{
           try {
-            const response = await fetch(`http://localhost:5000/api/custom/updatecustom/${id}`,{
+            const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/updatecustom/${id}`,{
               method: "PATCH",
               body:formData,
           });
@@ -311,7 +311,7 @@
       }
       
       try {
-        const response1 = await fetch(`http://localhost:5000/api/custom/status/${id}`, {
+        const response1 = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/status/${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

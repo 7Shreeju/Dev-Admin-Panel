@@ -26,7 +26,7 @@ const SignIn = () => {
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     console.log(values);
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/forgot`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/auth/forgot`,{
         method: "POST",
         headers:{
             "Content-Type": "application/json",

@@ -27,7 +27,7 @@ const JWTLogin = () => {
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     console.log(values);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(values),

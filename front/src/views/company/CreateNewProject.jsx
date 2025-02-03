@@ -15,7 +15,7 @@ const CreateNewProject = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/customer/custlist');
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/customer/custlist');
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }

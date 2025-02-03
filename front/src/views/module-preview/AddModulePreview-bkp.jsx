@@ -40,7 +40,7 @@ const AddModulePreview = () => {
     // Fetch data from the backend
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/form/get/673ec60359468307edb6bd79');
+        const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/form/get/673ec60359468307edb6bd79');
         const result = await response.json();
 
 

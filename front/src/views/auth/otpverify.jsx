@@ -47,7 +47,7 @@ const SignIn = () => {
     const handleSubmit = async (values, { setSubmitting, setErrors }) => {
       console.log(JSON.parse(localStorage.getItem("otpemail")));
       try {
-        const response = await fetch('http://localhost:5000/api/auth/authverify', {
+        const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/auth/authverify', {
           method: "POST",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, ...values }), // Fixed payload

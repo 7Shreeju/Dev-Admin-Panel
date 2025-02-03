@@ -25,7 +25,7 @@ const AddModulePreview = () => {
 
   const getdatabyid= async () => {
     try {
-    const response = await fetch(`http://localhost:5000/api/form/get/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/get/${id}`,{
         method:"GET",
     });
     const data = await response.json();

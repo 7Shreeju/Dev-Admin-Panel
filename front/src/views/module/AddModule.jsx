@@ -43,7 +43,7 @@ const AddModule = () => {
       setRows(updatedRows);
     }else{
       try {
-        const response = await fetch(`http://localhost:5000/api/form/deletefield/${ids}`,{
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/deletefield/${ids}`,{
             method:"DELETE",
         });
         const data = await response.json();
@@ -153,7 +153,7 @@ const AddModule = () => {
       }
       if(isEdit){
         try {
-          const response = await fetch(`http://localhost:5000/api/form/updatepages/${id}`, {
+          const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/updatepages/${id}`, {
               method: "PATCH",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ table_name, fields, selectedOption1 }),
@@ -177,7 +177,7 @@ const AddModule = () => {
         }
       }else{  
           try {
-              const response = await fetch(`http://localhost:5000/api/form/createpages`, {
+              const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/createpages`, {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({ table_name, fields,selectedOption1 }),
@@ -218,7 +218,7 @@ const AddModule = () => {
 
   const getdatabyid= async () => {
     try {
-    const response = await fetch(`http://localhost:5000/api/form/get/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/get/${id}`,{
         method:"GET",
     });
     const data = await response.json();
@@ -240,7 +240,7 @@ const AddModule = () => {
   };
   const fetchPageOptions = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/form/getPageOptions`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getPageOptions`,{
         method:"GET",
       });
       // Map data to react-select format
@@ -266,7 +266,7 @@ const AddModule = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/form/getSidebarOptions`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/getSidebarOptions`,{
         method:"GET",
       });
       const res_data = await response.json();
@@ -275,7 +275,7 @@ const AddModule = () => {
       const mappedOptions = sidebarOptions.map((item) => ({
         value: item._id,
         label: item.icontitle,
-        image: `http://localhost:5000/sidebar/${item.icon}`, 
+        image: `https://dev-admin-panel-1js4.onrender.com/sidebar/${item.icon}`, 
       }));
 
       const appendedOptions = [
@@ -500,7 +500,7 @@ const AddModule = () => {
         formData.append("icontitle", icontitle);
         formData.append("icon", icon);
 
-        const response = await fetch(`http://localhost:5000/api/form/addsidebaricon`,{
+        const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/form/addsidebaricon`,{
             method: "POST",
             body: formData,
     

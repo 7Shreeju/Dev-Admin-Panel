@@ -33,7 +33,7 @@ const handleDelete =(par) => {
 
 const handleyesno =async (id) =>{
   try {
-    const response = await fetch(`http://localhost:5000/api/custom/deletetheme/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/deletetheme/${id}`,{
         method:"DELETE",
     });
     const data = await response.json();
@@ -55,7 +55,7 @@ const handleyesno =async (id) =>{
 const handleedit = async(id) =>{
 
   try {
-    const response = await fetch(`http://localhost:5000/api/custom/getthemedatabyid/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/getthemedatabyid/${id}`,{
         method:"GET",
     });
     const data = await response.json();
@@ -83,7 +83,7 @@ const handleedit = async(id) =>{
 //for datatable
 const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:5000/api/custom/getlisttheme');
+    const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/custom/getlisttheme');
     if (!response.ok) { 
       throw new Error(`Error: ${response.status}`);
     }
@@ -126,7 +126,7 @@ const [footer, setfooter] = useState([]);
 
 const fetchdropdowndata = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/custom/getdropdowndata');
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/custom/getdropdowndata');
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }
@@ -297,8 +297,8 @@ const handleaddfeature = async (e) => {
     try {
         const response = await fetch(
             id
-                ? `http://localhost:5000/api/custom/updatetheme/${id}`
-                : `http://localhost:5000/api/custom/addtheme`,
+                ? `https://dev-admin-panel-1js4.onrender.com/api/custom/updatetheme/${id}`
+                : `https://dev-admin-panel-1js4.onrender.com/api/custom/addtheme`,
             {
                 method: id ? "PATCH" : "POST",
                 headers: {
@@ -346,7 +346,7 @@ const handleaddfeature = async (e) => {
     }
     
     try {
-      const response1 = await fetch(`http://localhost:5000/api/custom/statustheme/${id}`, {
+      const response1 = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/statustheme/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -33,7 +33,7 @@ const ModuleList = () => {
 
 const handleyesno =async (id) =>{
   try {
-    const response = await fetch(`http://localhost:5000/api/product/deleteprofea/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/product/deleteprofea/${id}`,{
         method:"DELETE",
     });
     const data = await response.json();
@@ -55,7 +55,7 @@ const handleyesno =async (id) =>{
 const handleedit = async(id) =>{
 
   try {
-    const response = await fetch(`http://localhost:5000/api/product/getprofeabyid/${id}`,{
+    const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/product/getprofeabyid/${id}`,{
         method:"GET",
     });
     const data = await response.json();
@@ -77,7 +77,7 @@ const handleedit = async(id) =>{
 //for datatable
 const fetchData = async () => {
   try {
-    const response = await fetch('http://localhost:5000/api/product/getprofea');
+    const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/product/getprofea');
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
@@ -211,7 +211,7 @@ useEffect(() => {
       const id = itemIdToDelete;
       if(!id){
         try {
-          const response = await fetch(`http://localhost:5000/api/product/addprofea`,{
+          const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/product/addprofea`,{
             method: "POST",
             headers:{
                 "Content-Type": "application/json",
@@ -245,7 +245,7 @@ useEffect(() => {
         }
       }else{
         try {
-          const response = await fetch(`http://localhost:5000/api/product/updateprofea/${id}`,{
+          const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/product/updateprofea/${id}`,{
             method: "PATCH",
             headers:{
                 "Content-Type": "application/json",

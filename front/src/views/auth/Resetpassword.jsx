@@ -35,7 +35,7 @@ const Resetpassword = () => {
   useEffect(() => {
     const verifyToken = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/verify-reset-token', {
+            const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/auth/verify-reset-token', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ token }), // Send token as an object
@@ -77,7 +77,7 @@ const Resetpassword = () => {
   const handleSubmit = async (values, { setSubmitting, setErrors }) => {
     console.log(values);
     try {
-      const response = await fetch('http://localhost:5000/api/auth/resetpassword', {
+      const response = await fetch('https://dev-admin-panel-1js4.onrender.com/api/auth/resetpassword', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({email,password: values.password, cpassword: values.cpassword }),
