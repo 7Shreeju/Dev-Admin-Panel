@@ -363,7 +363,7 @@ const gettemplatedata = async (req, res) => {
         });
 
         const header1 = header.details;
-        const headerPath = path.join(__dirname, "../../best-rate-templates/src/layout/Header/Header.jsx");
+        const headerPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/layout/Header/Header.jsx");
         fs.writeFile(headerPath, header1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -373,7 +373,7 @@ const gettemplatedata = async (req, res) => {
             });
 
         const slider1 = slider.details;
-        const sliderPath = path.join(__dirname, "../../best-rate-templates/src/components/Hero/Hero.jsx");
+        const sliderPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/Hero/Hero.jsx");
         fs.writeFile(sliderPath, slider1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -383,7 +383,7 @@ const gettemplatedata = async (req, res) => {
             }); 
 
         const usps1 = usps.details; 
-        const uspsPath = path.join(__dirname, "../../best-rate-templates/src/components/USPS/USPS.jsx"); 
+        const uspsPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/USPS/USPS.jsx"); 
         fs.writeFile(uspsPath, usps1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -393,7 +393,7 @@ const gettemplatedata = async (req, res) => {
             });    
 
         const about1 = about.details; 
-        const aboutPath = path.join(__dirname, "../../best-rate-templates/src/components/About/About.jsx");  
+        const aboutPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/About/About.jsx");  
         fs.writeFile(aboutPath, about1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -403,7 +403,7 @@ const gettemplatedata = async (req, res) => {
             });
 
         const proser1 = proser.details; 
-        const proserPath = path.join(__dirname, "../../best-rate-templates/src/components/Products/Products.jsx");
+        const proserPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/Products/Products.jsx");
         fs.writeFile(proserPath, proser1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -413,7 +413,7 @@ const gettemplatedata = async (req, res) => {
             });
 
         const testimonials1 = testimonials.details;
-        const testimonialsPath = path.join(__dirname, "../../best-rate-templates/src/components/Testimonials/Testimonials.jsx"); 
+        const testimonialsPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/Testimonials/Testimonials.jsx"); 
         fs.writeFile(testimonialsPath, testimonials1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -423,7 +423,7 @@ const gettemplatedata = async (req, res) => {
             });
 
         const gallery1 = gallery.details; 
-        const galleryPath = path.join(__dirname, "../../best-rate-templates/src/components/Gallery/Gallery.jsx"); 
+        const galleryPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/Gallery/Gallery.jsx"); 
         fs.writeFile(galleryPath, gallery1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -433,7 +433,7 @@ const gettemplatedata = async (req, res) => {
             });
 
         const contact1 = contact.details; 
-        const contactPath = path.join(__dirname, "../../best-rate-templates/src/components/Contact/Contact.jsx");
+        const contactPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/components/Contact/Contact.jsx");
         fs.writeFile(contactPath, contact1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
@@ -443,7 +443,7 @@ const gettemplatedata = async (req, res) => {
             });
            
         const footer1 = footer.details; 
-        const footerPath = path.join(__dirname, "../../best-rate-templates/src/layout/Footer/Footer.jsx");
+        const footerPath = path.join(__dirname, "https://best-rate-templates.onrender.com/src/layout/Footer/Footer.jsx");
         fs.writeFile(footerPath, footer1, "utf8", (err) => {
                 if (err) {
                     console.error("Error writing file:", err);
