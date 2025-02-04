@@ -17,29 +17,29 @@ import { useParams} from 'react-router-dom';
 
 const BaseTemplate = () => {
 
-  // const { tempname } = useParams();
-  // localStorage.setItem('tempname',tempname);
+  const { tempname } = useParams();
+  localStorage.setItem('tempname',tempname);
 
-//   const fetchData = async () => {
+  const fetchData = async () => {
         
-//     // const id= localStorage.getItem("tempname");
-//     try {
-//       const response = await fetch(`http://localhost:5000/api/custom/gettemplatedata/${tempname}`,{
-//         method:"GET",
-//       }); 
-//       // const data = await response.json();
-//       if (!response.ok) {
-//         throw new Error(`Error: ${response.status}`);
-//       }
+    // const id= localStorage.getItem("tempname");
+    try {
+      const response = await fetch(`http://localhost:5000/api/custom/gettemplatedata/${tempname}`,{
+        method:"GET",
+      }); 
+      // const data = await response.json();
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
 
-//     } catch (error) {
-//       console.error("Error fetching data:", error);
-//     }
-//   };
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-// useEffect(() => {
-//     fetchData();
-// },[]);
+useEffect(() => {
+    fetchData();
+},[]);
   // useEffect(() => {
   //   if(tempname != localStorage.getItem("tempname")){
 
