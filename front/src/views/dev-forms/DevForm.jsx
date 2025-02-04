@@ -13,6 +13,8 @@ import { LiaTimesSolid } from "react-icons/lia";
 import { event } from "jquery";
 import { IoSearchOutline } from "react-icons/io5";
 import { AiOutlineStop } from "react-icons/ai";
+import { DOMAIN_API_ID, DOMAIN_API_KEY } from '../../config/constant';
+
 
 const MultiStepForm = () => {
   const navigate = useNavigate();
@@ -302,6 +304,7 @@ const MultiStepForm = () => {
     e.preventDefault();
   };
   const [domain, setDomain] = useState();
+
   const  handleinputdomain =(event)=>{
     setDomain(event.target.value);
   }
@@ -784,9 +787,56 @@ const MultiStepForm = () => {
   // Search Domain
   const [buystatus, setbuystatus] = useState("buy");
   const [showSearchDomain, setShowSearchDomain] = useState(true);
+  const [available, setavailable] = useState("");
 
-  const handleShowSearchDomain = () => {
-    setShowSearchDomain(!showSearchDomain);
+  const handleShowSearchDomain = async () => {   
+    try {
+      // domain
+        const domain_expload = domain.split("."); 
+        const domain_name = domain_expload[0];
+        let tlds;
+        if (domain_expload[2]) {
+            tlds = domain_expload[1] + "." + domain_expload[2];
+        } else {
+            tlds = domain_expload[1];
+        }
+
+      const response = await fetch(`https://httpapi.com/api/domains/available.json?auth-userid=${DOMAIN_API_ID}&api-key=${DOMAIN_API_KEY}&domain-name=${domain_name}&tlds=${tlds}`,{
+        method: "GET",
+        headers:{
+            "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const result = await response.json();
+      if(result.status =='available'){
+        setavailable('Available');
+      }else{
+        setavailable('Not Available');
+      }
+
+      const response2 = await fetch(`https://test.httpapi.com/api/domains/v5/suggest-names.json?auth-userid=${DOMAIN_API_ID}&api-key=${DOMAIN_API_KEY}&keyword=${domain_name}&tlds=com`,{
+        method: "GET",  
+        headers:{
+            "Content-Type": "application/json",
+        },
+      });
+
+      if (!response2.ok) {
+        throw new Error(`Error: ${response2.status}`);
+      }
+      
+      setShowSearchDomain(!showSearchDomain);
+    } catch (error) {
+      console.log('Error fetching data:', error);
+    } 
+
+   
+    
   };
 
   const handleResetDomainVerification = () => {
@@ -1184,7 +1234,10 @@ const MultiStepForm = () => {
                         <div className="col-lg-8">
                           <div className="search">
                             <input
+                              name="domainame"
                               type="search"
+                              value={domain}
+                              onChange={handleinputdomain}
                               placeholder="simplyhappypets.in"
                             />
                             <div
@@ -1242,14 +1295,13 @@ const MultiStepForm = () => {
                       </div>
                     </div>
                     <div className="yourdomain">
+                    {available === 'Available' ? (
                       <div className="is-available">
-                        <span className="yourdomainstatus">
-                          Your domain name is available!
-                        </span>
+                        <span className="yourdomainstatus">Your domain name is available!</span>
                         <hr />
                         <div className="yourdomaincontainer">
                           <div className="domainhead">
-                            <h4>diigiihost.in</h4>
+                            <h4>{domain}</h4>
                           </div>
                           <div className="domainprize">
                             <div className="premium-btn">
@@ -1260,15 +1312,20 @@ const MultiStepForm = () => {
                           </div>
                         </div>
                       </div>
+                    ) : (
                       <div className="is-not-available">
                         <div className="yourdomaincontainer">
                           <div className="domainhead">
                             <h4>
-                              <AiOutlineStop /> diigiihost.in is taken
+                              <AiOutlineStop /> {domain} is taken
                             </h4>
                           </div>
                         </div>
                       </div>
+                    )}
+
+                      
+                  
                     </div>
                     <div className="purchase">
                       <h5 className="purchaseheading">

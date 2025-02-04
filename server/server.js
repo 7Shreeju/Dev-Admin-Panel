@@ -25,7 +25,7 @@ const errorMiddleware1 = require("./middlewares/error-middleware");
 
 // handling cors
 const corsoptions = {
-    origin:['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173'], 
+    origin:['http://localhost:3000', 'http://localhost:3001', 'http://localhost:5173','https://dev-admin-panel-1js4.onrender.com'], 
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials:true  
 }; 
