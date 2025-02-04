@@ -39,6 +39,8 @@ export  const Authprovider = ({children, tempname }) =>{
     }, [tempname]);
 
     const fetchData = async (id) => {
+        console.log('ddfcdfcd');
+        
         // const { tempname } = useParams();
         // localStorage.setItem('tempname',tempname);
 
