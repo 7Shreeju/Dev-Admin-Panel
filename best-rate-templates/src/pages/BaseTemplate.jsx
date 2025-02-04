@@ -24,7 +24,7 @@ const BaseTemplate = () => {
         
     // const id= localStorage.getItem("tempname");
     try {
-      const response = await fetch(`http://localhost:5000/api/custom/gettemplatedata/${tempname}`,{
+      const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/gettemplatedata/${tempname}`,{
         method:"GET",
       }); 
       // const data = await response.json();
