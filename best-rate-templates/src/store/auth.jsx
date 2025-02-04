@@ -44,7 +44,7 @@ export  const Authprovider = ({children, tempname }) =>{
 
         // const id= localStorage.getItem("tempname");
         try {
-          const response = await fetch(`http://localhost:5000/api/custom/gettemplatedata/${id}`,{
+          const response = await fetch(`https://dev-admin-panel-1js4.onrender.com/api/custom/gettemplatedata/${id}`,{
             method:"GET",
           }); 
           // const data = await response.json();
