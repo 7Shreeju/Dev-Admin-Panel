@@ -202,7 +202,7 @@ useEffect(() => {
             <FaTrashAlt />
           </a>
 
-          <Link to={`http://localhost:5173/${row.title}`} className="btn btn-action" target="__blank" title="Theme Module">
+          <Link to={`https://best-rate-templates.onrender.com/${row.title}`} className="btn btn-action" target="__blank" title="Theme Module">
             <FaEye />
           </Link>
         </div>
